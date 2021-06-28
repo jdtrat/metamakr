@@ -1,0 +1,30 @@
+Package: metamakr
+Title: Easily Create a Meta Package
+Version: 0.1.0
+Authors@R: 
+ c(
+    person(given = "Jonathan",
+           family = "Trattner",
+           role = c("aut", "cre"),
+           email = "jdt@jdtrat.com",
+           comment = c(ORCID = "0000-0002-1097-7603")
+           ),
+    person(given = "tidyverse authors",
+           role = "ctb",
+           comment = "Startup message code adapted from tidyverse package"),
+     person(given = "R Computing Lab at Wake Forest University",
+           role = "fnd")
+           )
+Description: Inspired by the 'tidyverse', this package is designed to 
+  help create a meta package for facilitating easy installation and 
+  loading of multiple, related packages. Notably, it creates a 
+  tidyverse-style startup message.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: es
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1.9000
+Imports: 
+    whisker,
+    usethis
