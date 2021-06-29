@@ -1,15 +1,6 @@
 
 pkgs <- {{{ imports }}}
 
-# Check which of the "main" {{ name }} packages
-# are currently loaded
-# The search() function  returns a character vector containing packages
-# attached to the current R session.
-check_loaded <- function() {
-  paks <- paste0("package:", pkgs)
-  pkgs[!paks %in% search()]
-}
-
 {{ name }}_attach <- function() {
   # Create `to_load` which is a character vector of all {{ name }}
   # packages not loaded in the current R session.
@@ -61,11 +52,4 @@ check_loaded <- function() {
   # Thanks for playing
   invisible()
 
-}
-
-# Detach all loaded packages for seeing the pretty startup message (:
-{{ name }}_detach <- function() {
-  pak <- paste0("package:", pkgs)
-  lapply(pak[pak %in% search()], detach, character.only = TRUE)
-  invisible()
 }

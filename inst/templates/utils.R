@@ -1,20 +1,4 @@
 
-# List all packages imported by {{ name }}
-{{ name }}_packages <- function() {
-  # get all imports from {{ name }}'s package description file
-  raw <- utils::packageDescription("{{ name }}")$Imports
-  # return a character vector of all the imports
-  imports <- strsplit(raw, ",")[[1]]
-  # "^\\s+" matches white space at the beginning of a character string
-  # "\\s+$ matches white space at the end of a character string
-  parsed <- gsub("^\\s+|\\s+$", "", imports)
-  # for each import, take only the first complete word (i.e. the package name)
-  names <- vapply(strsplit(parsed, "\\s+"), "[[", 1, FUN.VALUE = character(1))
-
-  return(names)
-
-}
-
 text_col <- function(x) {
 
   # If RStudio API is not available and/or does not have the getThemeInfo
@@ -53,4 +37,19 @@ package_version <- function(x) {
 # Create a message function for start-up that dynamically changes text color
 msg <- function(...) {
   packageStartupMessage(text_col(...))
+}
+
+
+# Check which of the main {{ name }} packages
+# are currently loaded
+# The search() function  returns a character vector containing packages
+# attached to the current R session.
+check_loaded <- function() {
+  paks <- paste0("package:", pkgs)
+  pkgs[!paks %in% search()]
+}
+
+# Is a package attached?
+is_attached <- function(x) {
+  paste0("package:", x) %in% search()
 }
