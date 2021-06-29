@@ -8,7 +8,7 @@
 
 ------------------------------------------------------------------------
 
- The tidyverse bundles together a suite of packages that "share common data representations and 'API' design," allowing easy installation and loading of multiple packages at once. Inspired by the [tidyverse](https://tidyverse.tidyverse.org), metamakr is designed to help users create their own verse of packages. metamakr is a development tool that allows you to bundle your own related packages, e.g. all internal packages for a research lab or corporation.
+ The tidyverse bundles together a suite of packages that "share common data representations and 'API' design," allowing easy installation and loading of multiple packages at once. Inspired by the [tidyverse](https://tidyverse.tidyverse.org), metamakr is designed to help users create their own verse of packages. metamakr is a development tool that allows you to bundle your own related packages, e.g. all internal packages for a research lab or company.
 
 ------------------------------------------------------------------------
 
