@@ -56,7 +56,7 @@ pkgs <- {{{ imports }}}
 
 # Detach all loaded packages for seeing the pretty startup message (:
 {{ name }}_detach <- function() {
-  pak <- paste0("package:", pkgs)
+  pak <- paste0("package:", c(pkgs, "{{ name }}"))
   lapply(pak[pak %in% search()], detach, character.only = TRUE)
   invisible()
 }
